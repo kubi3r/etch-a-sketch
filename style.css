@@ -12,7 +12,6 @@
 }
 
 .grid-square {
-    border: black solid 1px;
     box-sizing: border-box;
     flex: auto;
 }
