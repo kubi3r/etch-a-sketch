@@ -17,7 +17,13 @@ function generateGrid(size) {
             gridSquare.classList.add('grid-square')
 
             gridSquare.addEventListener('mouseover', (e) => {
-                e.target.classList.add('hover')
+                if (e.target.classList.contains('hover')) {
+                    const newOpacity = parseFloat(window.getComputedStyle(e.target).opacity) + 0.1
+                    e.target.style.opacity = newOpacity
+                } else {
+                    e.target.classList.add('hover')
+                    e.target.style.opacity = 0.1
+                }
             })
 
             row.appendChild(gridSquare)
