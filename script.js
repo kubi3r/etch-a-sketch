@@ -1,16 +1,24 @@
-// Generate grid of 16x16 divs
+function generateGrid(size) {
+    const grid = document.querySelector('#grid')
+    
 
-const grid = document.querySelector('#grid')
+    for (let i = 0; i < size; i++) {
+        const row = document.createElement('div')
 
-for (let i = 0; i < 16; i++) {
-    for (let i = 0; i < 16; i++) {
-        const gridSquare = document.createElement('div')
-        gridSquare.classList.add('grid-square')
+        row.classList.add('grid-row')
+        for (let i = 0; i < size; i++) {
+            const gridSquare = document.createElement('div')
+            
+            gridSquare.classList.add('grid-square')
 
-        gridSquare.addEventListener('mouseover', (e) => {
-            e.target.classList.add('hover')
-        })
+            gridSquare.addEventListener('mouseover', (e) => {
+                e.target.classList.add('hover')
+            })
 
-        grid.appendChild(gridSquare)
+            row.appendChild(gridSquare)
+        }
+        grid.appendChild(row)
     }
 }
+
+generateGrid(16)
