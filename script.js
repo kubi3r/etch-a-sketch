@@ -35,7 +35,7 @@ function generateGrid(size) {
 const newGridButton = document.querySelector('#new-grid')
 
 newGridButton.addEventListener('click', () => {
-    let newGridSize = parseInt(prompt('How many squares per size? (max: 100)'))
+    let newGridSize = parseInt(prompt('How many squares per side? (max: 100)'))
 
     if (newGridSize > 100) {
         newGridSize = 100
