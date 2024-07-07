@@ -1,6 +1,11 @@
 function generateGrid(size) {
     const grid = document.querySelector('#grid')
     
+    // If any grid squares exist, remove them
+    const oldGridSquares = document.querySelectorAll('#grid .grid-row')
+    oldGridSquares.forEach((row) => {
+        row.remove()
+    })
 
     for (let i = 0; i < size; i++) {
         const row = document.createElement('div')
@@ -21,4 +26,14 @@ function generateGrid(size) {
     }
 }
 
-generateGrid(16)
+const newGridButton = document.querySelector('#new-grid')
+
+newGridButton.addEventListener('click', () => {
+    let newGridSize = parseInt(prompt('How many squares per size? (max: 100)'))
+
+    if (newGridSize > 100) {
+        newGridSize = 100
+    }
+
+    generateGrid(newGridSize)
+})
