@@ -37,3 +37,5 @@ newGridButton.addEventListener('click', () => {
 
     generateGrid(newGridSize)
 })
+
+generateGrid(16)
